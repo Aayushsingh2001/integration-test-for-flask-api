@@ -18,6 +18,7 @@ pipeline {
             steps {
                 sh '''
                     python3 -m venv venv
+                    apt install python3.12-venv
                     source venv/bin/activate
                     pip install -r requirements.txt
                     python test_integration.py
