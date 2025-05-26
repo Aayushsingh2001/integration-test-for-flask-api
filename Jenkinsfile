@@ -17,8 +17,7 @@ pipeline {
         stage('Run Integration Tests') {
             steps {
                 sh '''
-                    sudo apt update && sudo apt install -y python3 python3-pip
-                    pip3 install -r requirements.txt
+                    pip install -r requirements.txt
                     python3 test_integration.py
                 '''
             }
