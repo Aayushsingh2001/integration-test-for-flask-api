@@ -17,8 +17,11 @@ pipeline {
         stage('Run Integration Tests') {
             steps {
                 sh '''
+                    python3 -m venv venv
+                    source venv/bin/activate
                     pip install -r requirements.txt
-                    python3 test_integration.py
+                    python test_integration.py
+                   
                 '''
             }
         }
